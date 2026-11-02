@@ -1,4 +1,7 @@
 <Solution>
+  <Project Path="Business/Business.csproj" Id="c3c1e0e5-402e-4220-9fc3-d99d67c9c485" />
+  <Project Path="Core/Core.csproj" Id="ea145576-0006-46cc-934f-8127c8f2b53b" />
   <Project Path="DataAccess/DataAccess.csproj" />
   <Project Path="Entities/Entities.csproj" />
+  <Project Path="WebAPI/WebAPI.csproj" Id="0808bc2b-f320-4313-a07d-db202ebb5694" />
 </Solution>
