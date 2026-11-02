@@ -1,4 +1,7 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
+using Core.Utilities.Results.DataResults;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -16,29 +19,36 @@ namespace Business.Concrete
         {
             _movieDal = moviesDal;
         }
-        public void Add(Movie movie)
+        public IResult Add(Movie movie)
         {
             _movieDal.Add(movie);
+            return new SuccessResult(Messages.ApiAdded);
         }
 
-        public void Delete(Movie movie)
+        public IResult Delete(Movie movie)
         {
-            _movieDal.Delete(movie);    
+            _movieDal.Delete(movie);
+            return new SuccessResult(Messages.ApiDeleted);
         }
 
-        public Movie getOneById(int id)
+        public IDataResult<Movie> getOneById(int id)
         {
-            return _movieDal.getOne(m=>m.Id==id);
+            var result = _movieDal.getOne(m=>m.Id==id);
+            return result == null ? new ErrorDataResult<Movie>(Messages.ErrorOccured)
+           : new SuccessDataResult<Movie>(result, Messages.ApiListed);
         }
 
-        public List<Movie> ListAll()
+        public IDataResult<List<Movie>> ListAll()
         {
-            return _movieDal.getAll();
+            var result = _movieDal.getAll();
+            return result == null ? new ErrorDataResult<List<Movie>>(Messages.ErrorOccured)
+                : new SuccessDataResult<List<Movie>>(result, Messages.ApiListed);
         }
 
-        public void Update(Movie movie)
+        public IResult Update(Movie movie)
         {
             _movieDal.Update(movie);
+            return new SuccessResult(Messages.ApiUpdated);
         }
     }
 }
