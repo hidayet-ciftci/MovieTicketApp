@@ -8,5 +8,12 @@ namespace Entities.Concrete
 {
     public class Movies
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string? Desc { get; set; }
+        public decimal Duration { get; set; }
+        public int AgeLimit { get; set; }
+        public string PosterLink { get; set; }
+        public bool IsActive { get; set; }
     }
 }
