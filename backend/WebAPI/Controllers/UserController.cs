@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         public IActionResult getOneUser(int id)
         {
             try

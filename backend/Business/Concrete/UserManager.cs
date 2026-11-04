@@ -35,7 +35,7 @@ namespace Business.Concrete
         {
             var result = _userDal.getOne(u => u.Id == id);
             return result == null ? new ErrorDataResult<User>(Messages.NotFound)
-                : new SuccessDataResult<User>(Messages.ApiListed);
+                : new SuccessDataResult<User>(result,Messages.ApiListed);
         }
 
         public IDataResult<List<User>> ListAll()

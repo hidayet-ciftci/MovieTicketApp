@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
                 throw new Exception(ex.Message);
             }
         }
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         public IActionResult getOneMovie(int id)
         {
             try

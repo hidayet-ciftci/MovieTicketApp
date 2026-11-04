@@ -19,6 +19,9 @@ namespace Business.DependencyResolvers
             serviceCollection.AddScoped<IMovieService, MovieManager>();
             serviceCollection.AddScoped<IMoviesDal, EfMovieDal>();
 
+            serviceCollection.AddScoped<IUserService, UserManager>();
+            serviceCollection.AddScoped<IUserDal, EfUserDal>();
+
             serviceCollection.AddScoped<movieTheaterContext>();        
         }
     }

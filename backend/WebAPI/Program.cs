@@ -1,6 +1,7 @@
 using Business.DependencyResolvers;
-using Core.Utilities.IoC;
 using Core.Extensions;
+using Core.Utilities.IoC;
+using WebAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddJwtAuth(builder.Configuration);
 
 builder.Services.AddDependencyResolvers(new ICoreModule[] { new CoreModule() });
 
