@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfMovieDal : EfEntityRepositoryBase<Movie, MoviesContext>, IMoviesDal
+    public class EfMovieDal : EfEntityRepositoryBase<Movie, movieTheaterContext>, IMoviesDal
     {
         public List<UserMovieDTO> getMoviesWithUser()
         {
-            using (MoviesContext context = new MoviesContext())
+            using (movieTheaterContext context = new movieTheaterContext())
             {
                 var result = from m in context.Movies
                              join u in context.Users

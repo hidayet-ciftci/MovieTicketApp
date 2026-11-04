@@ -19,7 +19,7 @@ namespace Business.DependencyResolvers
             serviceCollection.AddScoped<IMovieService, MovieManager>();
             serviceCollection.AddScoped<IMoviesDal, EfMovieDal>();
 
-            serviceCollection.AddScoped<MoviesContext>();        
+            serviceCollection.AddScoped<movieTheaterContext>();        
         }
     }
 }

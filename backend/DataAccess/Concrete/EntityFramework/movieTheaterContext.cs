@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class MoviesContext : DbContext
+    public class movieTheaterContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5430;Database=movies;Username=postgres;Password=123456");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5430;Database=movieTheater;Username=postgres;Password=123456");
         }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<User> Users { get; set; }
