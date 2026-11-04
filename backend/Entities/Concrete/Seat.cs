@@ -9,5 +9,10 @@ namespace Entities.Concrete
 {
     public class Seat : IEntity
     {
+        public int Id { get; set; }
+        public int HallId { get; set; }
+        public string RowLetter { get; set; }
+        public int SeatNumber { get; set; }
+        public string SeatType { get; set; }
     }
 }
