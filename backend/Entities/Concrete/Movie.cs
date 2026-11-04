@@ -16,5 +16,6 @@ namespace Entities.Concrete
         public int AgeLimit { get; set; }
         public string PosterLink { get; set; }
         public bool IsActive { get; set; }
+        public DateTimeOffset CreatedTime { get; set; }
     }
 }
