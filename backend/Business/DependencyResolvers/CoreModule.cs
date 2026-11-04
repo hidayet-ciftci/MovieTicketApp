@@ -16,8 +16,6 @@ namespace Business.DependencyResolvers
     {
         public void Load(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddMemoryCache();
-        
             serviceCollection.AddScoped<IMovieService, MovieManager>();
             serviceCollection.AddScoped<IMoviesDal, EfMovieDal>();
 

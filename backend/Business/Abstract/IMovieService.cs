@@ -1,6 +1,7 @@
 ﻿using Core.Utilities.Results;
 using Core.Utilities.Results.DataResults;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace Business.Abstract
         IResult Update(Movie movie);
         IDataResult<List<Movie>> ListAll();
         IDataResult<Movie> getOneById(int id);
+        IDataResult<List<UserMovieDTO>> ListUserWithMovies();
 
     }
 }

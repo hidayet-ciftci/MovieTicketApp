@@ -4,6 +4,7 @@ using Core.Utilities.Results;
 using Core.Utilities.Results.DataResults;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,12 @@ namespace Business.Concrete
         {
             _movieDal.Update(movie);
             return new SuccessResult(Messages.ApiUpdated);
+        }
+
+        public IDataResult<List<UserMovieDTO>> ListUserWithMovies()
+        {
+            var resut = _movieDal.getMoviesWithUser();
+            return new SuccessDataResult<List<UserMovieDTO>>(resut,Messages.ApiListed);
         }
     }
 }
